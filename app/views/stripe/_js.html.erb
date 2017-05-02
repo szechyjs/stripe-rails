@@ -9,5 +9,5 @@
 <script type="text/javascript" src="https://js.stripe.com/<%=stripe_js_version%>/"></script>
 <%- end %>
 <script type="text/javascript">
-Stripe.setPublishableKey("<%= Rails.application.config.stripe.publishable_key or fail 'No stripe.com publishable key found. Please set config.stripe.publishable_key in config/application.rb to one of your publishable keys, which can be found here: https://manage.stripe.com/#account/apikeys' %>")
+Stripe.setPublishableKey("<%= Rails.application.secrets.stripe_publishable_key or fail 'No stripe.com publishable key found. Please set stripe_publishable_key in secrets.yml to one of your publishable keys, which can be found here: https://manage.stripe.com/#account/apikeys' %>")
 </script>
